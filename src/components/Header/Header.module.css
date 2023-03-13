@@ -1,0 +1,9 @@
+.header {
+    grid-area: h;
+    background-color: aquamarine;
+}
+
+.header img {
+    height: 58px;
+    border: 1px solid aquamarine;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import Classes from './Profile.module.css';
+import MyPosts from '../MyPosts/MyPosts';
 
 const Profile = () => {
     return (
-        <section className={Classes.profile}>
+        <section>
             <div>
                 <img alt='none' src='https://i.ytimg.com/vi/EQDu8Mp0OaU/maxresdefault.jpg'></img>
             </div>
@@ -11,9 +11,7 @@ const Profile = () => {
                 <img alt='None'></img>
                 ava
             </div>
-            <div>
-                post
-            </div>
+            <MyPosts />
       </section>
     )
 }

@@ -1,4 +1,30 @@
 .nav {
     grid-area: n;
-    background-color: aquamarine;
+    padding: 20px 30px;
+    background: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+.nav ul a:before {
+    margin-right: 14px;
+}
+
+.nav ul a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    padding: 6px 0; 
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #444;
+    transition: .3s linear;
+}
+
+.nav ul a:hover {
+    color: #b99d61;
 }

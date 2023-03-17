@@ -1,10 +1,43 @@
 .dialogs {
     display: grid;
+
+    grid-template-areas: "h h" "d m";
     grid-template-columns: 2fr 10fr;
+    grid-template-rows: 60px 1fr;
+    grid-gap: 10px;
+
+    height: 100vh;
+    padding: 20px;
+}
+
+.dialogs h1 {
+    grid-area: h;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid white;
 }
 
 .dialogs-items {
+    grid-area: d;
+    border-right: solid 3px white;
 }
 
 .messages {
+    grid-area: m;
+    padding: 20px;
+    color: white;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.dialog {
+    margin: 10px 0;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: white;
 }

@@ -1,8 +1,10 @@
 .nav {
     grid-area: n;
     padding: 20px 30px;
-    background: white;
+    background: #607d8b;
     font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 5px 1px #607d8b;
+    border-radius: 5px;
 }
 
 .nav ul {
@@ -20,8 +22,9 @@
     display: block;
     padding: 6px 0; 
     letter-spacing: 1px;
+    font-size: 1.3rem;
     font-weight: 300;
-    color: #444;
+    color: white;
     transition: .3s linear;
 }
 

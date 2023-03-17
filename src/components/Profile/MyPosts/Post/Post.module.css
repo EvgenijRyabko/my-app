@@ -1,0 +1,10 @@
+.item{
+    background-color: #78909c;
+    margin: 10px 5px;
+    border-radius: 10px;
+}
+
+.item img {
+    width: 80px;
+    border-radius: 50%;
+}

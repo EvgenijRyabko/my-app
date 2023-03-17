@@ -5,6 +5,7 @@ import Post from './Post/Post';
 const MyPosts = () => {
     return (
         <div className={ classes.list }>
+            <h1>Posts</h1>
             <Post message="Hello world!" likesCount='0' />
             <Post message="Hi boyzzzz" likesCount='0' />
         </div>

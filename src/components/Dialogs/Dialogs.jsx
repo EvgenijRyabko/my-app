@@ -1,31 +1,38 @@
-import React from 'react';
-import classes from './Dialogs.module.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import classes from "./Dialogs.module.css";
+import data from '../../data/dialogs-data.json';
 
-const DialogItem = ({ name }) => {
-    return (
-        <section className={ classes.dialog }>
-            { name }
-        </section>
-    );
-}
+const DialogItem = ({ name, id }) => {
+  let path = `/dialogs/${id}`;
+
+  return (
+    <section className={classes.dialog}>
+      <NavLink to={path}>{name}</NavLink>
+    </section>
+  );
+};
+
+const Message = ({ message }) => {
+  return <div className={classes.message}>{message}</div>;
+};
 
 const Dialogs = () => {
-    return (
-        <section className={ classes.dialogs }>
-            <div className={ classes['dialogs-items']}>
-                <div className={ classes.dialog }>Andrew</div>
-                <div className={ classes.dialog }>Mark</div>
-                <div className={ classes.dialog }>Slavyan</div>
-                <div className={ classes.dialog }>Sveta</div>
-                <div className={ classes.dialog }>Yarik</div>
-            </div>
-            <div className={ classes.messages}>
-                <div className={ classes.message }>Hi</div>
-                <div className={ classes.message }>How are your course?</div>
-                <div className={ classes.message }>Yo</div>
-            </div>
-        </section>
-    );
-}
+  return (
+    <section className={classes.dialogs}>
+      <h1>Dialogs</h1>
+      <div className={classes["dialogs-items"]}>
+        {
+            data.map((el, i) => <DialogItem key={i} name={el.name} id={el.id} />)
+        }
+      </div>
+      <div className={classes.messages}>
+        <Message message="Hi" />
+        <Message message="How are your course?" />
+        <Message message="Yo" />
+      </div>
+    </section>
+  );
+};
 
 export default Dialogs;

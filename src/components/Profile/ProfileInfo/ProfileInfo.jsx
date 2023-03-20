@@ -7,12 +7,12 @@ const ProfileInfo = () => {
       <div className={classes["profile-header"]}>
         <img
           alt="none"
-          src="https://psv4.userapi.com/c237331/u42036175/docs/d57/acc18c0e20cd/cover2798.jpg?extra=rMHiGk0Cx5LlLY4nrjb5cxhKBfaar-VNDsd5XYnsDrYZ3Oz4Zz_OR7g4Hv-RQNgxO4QHybKKTRSBo1Y4BpWX-YXM7O5tUTn4Uu-utxB_HzpAoW1uNria4xMioLkIgfzKM1J7GhR04rC65Fr8YiwChmYx"
+          src="https://sun9-44.userapi.com/impf/c858532/v858532226/152b77/jsc2YggtlzI.jpg?size=1590x400&quality=95&crop=77,0,1192,299&sign=f222d99a4a261d97f56f3300f33ff085&type=cover_group"
         />
       </div>
       <div className={classes["user-info"]}>
         <div>
-          <img id="avatar" src="" alt="none" />
+          <img id="avatar" src="https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1" alt="none" />
         </div>
         <h1>Username</h1>
       </div>

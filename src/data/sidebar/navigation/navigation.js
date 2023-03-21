@@ -1,4 +1,4 @@
-[
+let navigation = [
     {
         "to": "/profile",
         "text": "Profile"
@@ -20,3 +20,5 @@
         "text": "Settings"
     }
 ]
+
+export default navigation;

@@ -1,0 +1,44 @@
+.create-area {
+    display: grid;
+    padding: 10px 50px;
+}
+
+.create-area textarea {
+    background-color: #78909c;
+    outline: none;
+    resize: none;
+    color: white;
+    border-radius: 10px;
+    min-width: 1000px;
+    min-height: 100px;
+    padding: 0 5px;
+    cursor: auto;
+}
+
+.create-area textarea::-webkit-scrollbar {
+    width: 10px;
+    background-color: #78909c;
+    border-radius: 10px;
+}
+
+.create-area textarea::-webkit-scrollbar-thumb {
+    background-color: #455a64;
+    width: 10px;
+    border-radius: 10px;
+}
+
+.create-area button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color:#455a64;
+    justify-self: end;
+    margin: 10px 0;
+    transition: 500ms;
+}
+
+.create-area button:hover {
+    filter: opacity(80%);
+}

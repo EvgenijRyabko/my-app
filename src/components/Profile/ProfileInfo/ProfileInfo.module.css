@@ -7,6 +7,7 @@
 .user-info {
     display: grid;
     height: 200px;
+    color: white;
 
     grid-template-columns: 2fr 10fr;
 }

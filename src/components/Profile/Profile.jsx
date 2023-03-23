@@ -3,11 +3,15 @@ import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 //import classes from './Profile.module.css';
 
-const Profile = ({profilePage}) => {
+const Profile = ({profilePage, addPost, updateNewPostText}) => {
     return (
         <section>
             <ProfileInfo />
-            <MyPosts posts={profilePage.posts}/>
+            <MyPosts 
+                posts={profilePage.posts}
+                addPost={addPost}
+                updateNewPostText={updateNewPostText}
+                newPostText={profilePage.newPostText}/>
       </section>
     )
 }

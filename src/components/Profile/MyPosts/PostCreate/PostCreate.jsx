@@ -1,11 +1,18 @@
 import React from "react";
 import classes from './PostCreate.module.css';
 
-const PostCreate = () => {
+const PostCreate = (props) => {
+    let newPostElement = React.createRef();
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
+
     return (
         <div className={classes['create-area']}>
-            <textarea />
-            <button type='button' onClick={() => { alert('Hey!'); }}>Опубликовать</button>
+            <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement} />
+            <button type='button' onClick={props.addPost}>Опубликовать</button>
         </div>
     );
 }

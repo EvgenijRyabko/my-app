@@ -7,7 +7,10 @@ const MyPosts = ( props ) => {
     return (
         <div className={ classes.list }>
             <h1>Posts</h1>
-            <PostCreate />
+            <PostCreate 
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+                newPostText={props.newPostText} />
             {
                 props.posts.map((el, i) => 
                     <Post key={i} message={el.message} likesCount={el.likesCount} />

@@ -8,8 +8,7 @@ const MyPosts = ( props ) => {
         <div className={ classes.list }>
             <h1>Posts</h1>
             <PostCreate 
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
                 newPostText={props.newPostText} />
             {
                 props.posts.map((el, i) => 

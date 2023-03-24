@@ -2,6 +2,9 @@ import dialogsPage from "./dialogsPage/dialogsPage";
 import profilePage from "./profilePage/profilePage";
 import sidebar from "./sidebar/sidebar";
 
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
   _state: {
     profilePage,
@@ -56,3 +59,10 @@ let store = {
 };
 
 export default store;
+
+export const addPostActionCreator = () => ({type: ADD_POST});
+
+export const updateNewPostTextActionCreator = text => ({
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text
+});

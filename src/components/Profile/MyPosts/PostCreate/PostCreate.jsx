@@ -1,5 +1,6 @@
 import React from "react";
 import classes from './PostCreate.module.css';
+import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../../data/state";
 
 const PostCreate = (props) => {
     let newPostElement = React.createRef();
@@ -7,11 +8,12 @@ const PostCreate = (props) => {
     let onPostChange = () => {
         debugger;
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text });
+        let action = updateNewPostTextActionCreator(text);
+        props.dispatch(action);
     }
 
     let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
     return (

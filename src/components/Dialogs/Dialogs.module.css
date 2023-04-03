@@ -1,17 +1,16 @@
 .dialogs {
     display: grid;
 
-    grid-template-areas: "h h" "d m";
+    grid-template-areas: "header header" "dialogs messages" "dialogs message-create";
     grid-template-columns: 3fr 10fr;
     grid-template-rows: 60px 1fr;
     grid-gap: 10px;
 
-    height: 100vh;
     padding: 20px;
 }
 
 .dialogs h1 {
-    grid-area: h;
+    grid-area: header;
     color: white;
     font-size: 2rem;
     font-weight: 600;
@@ -19,12 +18,50 @@
 }
 
 .dialogs-items {
-    grid-area: d;
+    grid-area: dialogs;
     border-right: solid 3px white;
 }
 
 .messages {
-    grid-area: m;
+    grid-area: messages;
     padding: 20px;
     color: white;
+}
+
+.message-create {
+    display: grid;
+    grid-area: message-create;
+
+    grid-template-columns: 10fr 1fr;
+}
+
+.message-create div {
+    padding: 10px;
+}
+
+textarea {
+    background-color: #78909c;
+    outline: none;
+    resize: none;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100px;
+    padding: 0 5px;
+    cursor: auto;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color:#455a64;
+    justify-self: center;
+    transition: 500ms;
+}
+
+button:hover {
+    filter: opacity(80%);
 }

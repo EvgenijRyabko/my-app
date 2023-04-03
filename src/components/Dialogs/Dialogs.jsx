@@ -2,8 +2,20 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
+import { sendMessageCreactor, updateNewMessageBodyCreator } from '../../data/state'
 
-const Dialogs = ({dialogsPage}) => {
+const Dialogs = ({ dialogsPage, dispatch }) => {
+  let newMessageBody = dialogsPage.newMessageBody;
+
+  let onSendMessageClick = () => {
+    dispatch(sendMessageCreactor());
+  }
+
+  let onMessageUpdate = e => {
+    let body = e.target.value;
+    dispatch(updateNewMessageBodyCreator(body));
+  }
+
   return (
     <section className={classes.dialogs}>
       <h1>Dialogs</h1>
@@ -13,9 +25,18 @@ const Dialogs = ({dialogsPage}) => {
         }
       </div>
       <div className={classes.messages}>
-        <Message message="Hi" fromUser={true} />
-        <Message message="How are your course?" fromUser={false} />
-        <Message message="Yo" fromUser={true} />
+        {
+          dialogsPage.dialogs[0].messages.map((message, i) => <Message key={i} message={message} fromUser={true} />)
+        }
+      </div>
+      <div className={classes["message-create"]}>
+        <div>
+          <textarea value={ newMessageBody }
+                    onChange={ onMessageUpdate } />
+        </div>
+        <div>
+          <button onClick={ onSendMessageClick }>Send message</button>
+        </div>
       </div>
     </section>
   );

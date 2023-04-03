@@ -3,7 +3,8 @@ import messages from "./messages/messages";
 
 let dialogsPage = {
     dialogs: dialogs,
-    messages: messages
+    messages: messages,
+    newMessageBody: ""
 }
 
 export default dialogsPage;

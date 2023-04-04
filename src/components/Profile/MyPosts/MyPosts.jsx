@@ -1,13 +1,13 @@
 import React from "react";
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
-import PostCreate from "./PostCreate/PostCreate";
+import PostCreateContainer from './PostCreate/PostCreateContainer';
 
 const MyPosts = ( props ) => {
     return (
         <div className={ classes.list }>
             <h1>Posts</h1>
-            <PostCreate 
+            <PostCreateContainer 
                 dispatch={props.dispatch}
                 newPostText={props.newPostText} />
             {

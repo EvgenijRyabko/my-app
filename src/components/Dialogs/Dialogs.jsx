@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
-import { sendMessageCreactor, updateNewMessageBodyCreator } from '../../data/state'
+import { sendMessageCreactor, updateNewMessageBodyCreator } from '../../data/dialogsPage/dialogsPage-reducer'
 
 const Dialogs = ({ dialogsPage, dispatch }) => {
   let newMessageBody = dialogsPage.newMessageBody;

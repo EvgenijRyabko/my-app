@@ -7,7 +7,7 @@ const Navbar = (props) => {
     <nav className={Classes.nav}>
       <ul>
         {
-          props.sidebar.navigation.map((el, i) => {
+          props.navigation.map((el, i) => {
             return (
               <li key={ i }>
                 <NavLink to={ el.to }>{ el.text }</NavLink>

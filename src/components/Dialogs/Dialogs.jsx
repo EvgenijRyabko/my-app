@@ -2,18 +2,19 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
-import { sendMessageCreactor, updateNewMessageBodyCreator } from '../../data/dialogsPage/dialogsPage-reducer'
 
-const Dialogs = ({ dialogsPage, dispatch }) => {
-  let newMessageBody = dialogsPage.newMessageBody;
+const Dialogs = (props) => {
+  debugger
+  let newMessageBody = props.dialogsPage.newMessageBody;
 
   let onSendMessageClick = () => {
-    dispatch(sendMessageCreactor());
+    props.sendMessage();
   }
 
   let onMessageUpdate = e => {
+    debugger
     let body = e.target.value;
-    dispatch(updateNewMessageBodyCreator(body));
+    props.updateNewMessageBody(body);
   }
 
   return (
@@ -21,12 +22,12 @@ const Dialogs = ({ dialogsPage, dispatch }) => {
       <h1>Dialogs</h1>
       <div className={classes["dialogs-items"]}>
         {
-            dialogsPage.dialogs.map((el, i) => <DialogItem key={i} name={el.name} id={el.id} />)
+            props.dialogsPage.dialogs.map((el, i) => <DialogItem key={i} name={el.name} id={el.id} />)
         }
       </div>
       <div className={classes.messages}>
         {
-          dialogsPage.dialogs[0].messages.map((message, i) => <Message key={i} message={message} fromUser={true} />)
+          props.dialogsPage.dialogs[0].messages.map((message, i) => <Message key={i} message={message} fromUser={true} />)
         }
       </div>
       <div className={classes["message-create"]}>

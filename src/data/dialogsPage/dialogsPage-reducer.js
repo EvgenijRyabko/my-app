@@ -12,21 +12,29 @@ let initialState = {
 
 const dialogsPageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            break;
-        case SEND_MESSAGE:
+        case UPDATE_NEW_MESSAGE_BODY:{
+            return {
+                ...state,
+                newMessageBody: action.body
+            };
+        }
+        case SEND_MESSAGE:{
             let message = state.newMessageBody;
-            
-            let item = state.dialogs.find(el => {return el.id === "1"});
-            item.messages.push(message);
-            state.newMessageBody = "";
-            break;
-        default:
-            break;
-    }
 
-    return state;
+            let stateCopy = {
+                ...state,
+                dialogs: [...state.dialogs],
+                newMessageBody: ''
+            };
+            
+            let item = stateCopy.dialogs.find(el => {return el.id === "1"});
+            item.messages.push(message);
+            
+            return stateCopy;
+        }
+        default:
+            return state;
+    }
 }
 
 export const sendMessageCreactor = () => ({type: SEND_MESSAGE});

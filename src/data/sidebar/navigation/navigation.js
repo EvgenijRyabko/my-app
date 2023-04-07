@@ -8,6 +8,10 @@ let navigation = [
         "text": "Dialogs"
     },
     {
+        "to": "/users",
+        "text": "Users"
+    },
+    {
         "to": "/news",
         "text": "News"
     },

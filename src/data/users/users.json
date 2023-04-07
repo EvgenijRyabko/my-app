@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "followed": true,
+        "profileImage": "https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1",
+        "fullName": "Dmitry",
+        "status": "I'm an animal",
+        "location": {"city": "Minsk", "country": "Belarus"}
+    },
+    {
+        "id": 2,
+        "followed": false,
+        "profileImage": "https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1",
+        "fullName": "Evgen",
+        "status": "I'm an animal too",
+        "location": {"city": "Lugansk", "country": "Russia"}
+    },
+    {
+        "id": 3,
+        "followed": true,
+        "profileImage": "https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1",
+        "fullName": "Andrey",
+        "status": "I'm a boss",
+        "location": {"city": "Moskow", "country": "Russia"}
+    },
+    {
+        "id": 4,
+        "followed": true,
+        "profileImage": "https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1",
+        "fullName": "Severus",
+        "status": "Ronald Vezlee",
+        "location": {"city": "Azkaban", "country": "Dead"}
+    },
+    {
+        "id": 5,
+        "followed": false,
+        "profileImage": "https://avatars.mds.yandex.net/i?id=c321e5b50ea88480a491b5d941f6b4d8ca382a4c-8175992-images-thumbs&n=13&exp=1",
+        "fullName": "Dmitry",
+        "status": "I'm an animal",
+        "location": {"city": "Minsk", "country": "Belarus"}
+    }
+]

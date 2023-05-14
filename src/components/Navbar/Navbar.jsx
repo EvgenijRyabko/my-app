@@ -1,23 +1,19 @@
-import React from "react";
-import Classes from "./Navbar.module.css";
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Classes from './Navbar.module.css';
 
-const Navbar = (props) => {
+function Navbar({ navigation }) {
   return (
     <nav className={Classes.nav}>
       <ul>
-        {
-          props.navigation.map((el, i) => {
-            return (
-              <li key={ i }>
-                <NavLink to={ el.to }>{ el.text }</NavLink>
-              </li>
-            )
-          })
-        }
+        {navigation.map((el, i) => (
+          <li key={i}>
+            <NavLink to={el.to}>{el.text}</NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;

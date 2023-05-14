@@ -1,44 +1,45 @@
-import React from "react";
-import classes from "./Dialogs.module.css";
-import Message from "./Message/Message";
-import DialogItem from "./DialogItem/DialogItem";
+import React from 'react';
+import classes from './Dialogs.module.css';
+import Message from './Message/Message';
+import DialogItem from './DialogItem/DialogItem';
 
-const Dialogs = (props) => {
-  let newMessageBody = props.dialogsPage.newMessageBody;
+function Dialogs({ dialogsPage, sendMessage = (f) => f, updateNewMessageBody = (f) => f }) {
+  const { newMessageBody } = dialogsPage;
 
-  let onSendMessageClick = () => {
-    props.sendMessage();
-  }
+  const onSendMessageClick = () => {
+    sendMessage();
+  };
 
-  let onMessageUpdate = e => {
-    let body = e.target.value;
-    props.updateNewMessageBody(body);
-  }
+  const onMessageUpdate = (e) => {
+    const body = e.target.value;
+    updateNewMessageBody(body);
+  };
 
   return (
     <section className={classes.dialogs}>
       <h1>Dialogs</h1>
-      <div className={classes["dialogs-items"]}>
-        {
-            props.dialogsPage.dialogs.map((el, i) => <DialogItem key={i} name={el.name} id={el.id} />)
-        }
+      <div className={classes['dialogs-items']}>
+        {dialogsPage.dialogs.map((el, i) => (
+          <DialogItem key={i} name={el.name} id={el.id} />
+        ))}
       </div>
       <div className={classes.messages}>
-        {
-          props.dialogsPage.dialogs[0].messages.map((message, i) => <Message key={i} message={message} fromUser={true} />)
-        }
+        {dialogsPage.dialogs[0].messages.map((message, i) => (
+          <Message key={i} message={message} fromUser />
+        ))}
       </div>
-      <div className={classes["message-create"]}>
+      <div className={classes['message-create']}>
         <div>
-          <textarea value={ newMessageBody }
-                    onChange={ onMessageUpdate } />
+          <textarea value={newMessageBody} onChange={onMessageUpdate} />
         </div>
         <div>
-          <button onClick={ onSendMessageClick }>Send message</button>
+          <button type="button" onClick={onSendMessageClick}>
+            Send message
+          </button>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Dialogs;

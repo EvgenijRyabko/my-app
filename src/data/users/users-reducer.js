@@ -1,46 +1,44 @@
 import users from './users.json';
 
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = "UNFOLLOW";
-const SET_USERS = "SET-USERS";
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET-USERS';
 
-let initialState = {
-  users: [...users]
+const initialState = {
+  users: [...users],
 };
 
-const usersReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action = null) => {
   switch (action.type) {
     case FOLLOW: {
-      let stateCopy = {
+      const stateCopy = {
         ...state,
-        users: state.users.map(user =>  
-          user.id === action.userID 
-              ? {...user, followed: true} 
-              : {...user})
-      }
+        users: state.users.map((user) =>
+          user.id === action.userID ? { ...user, followed: true } : { ...user },
+        ),
+      };
 
       return stateCopy;
-    };
+    }
     case UNFOLLOW: {
-      let stateCopy = {
+      const stateCopy = {
         ...state,
-        users: state.users.map(user =>  
-          user.id === action.userID 
-              ? {...user, followed: false} 
-              : {...user})
-      }
+        users: state.users.map((user) =>
+          user.id === action.userID ? { ...user, followed: false } : { ...user },
+        ),
+      };
 
       return stateCopy;
-    };
-    case SET_USERS: 
-      return { ...state, users: [...state.users, ...action.users] }
+    }
+    case SET_USERS:
+      return { ...state, users: [...state.users, ...action.users] };
     default:
-        return state;;
+      return state;
   }
 };
 
-export const followAC = userID => ({type: FOLLOW, userID: userID});
-export const unfollowAC = userID => ({type: UNFOLLOW, userID: userID});
-export const setUsersAC = users => ({type: SET_USERS, users: users});
+export const followAC = (userID) => ({ type: FOLLOW, userID });
+export const unfollowAC = (userID) => ({ type: UNFOLLOW, userID });
+export const setUsersAC = (data) => ({ type: SET_USERS, data });
 
 export default usersReducer;

@@ -1,7 +1,7 @@
-import posts from "./posts/posts";
+import posts from './posts/posts';
 
-let profilePage = {
-    posts: posts
-}
+const profilePage = {
+  posts,
+};
 
 export default profilePage;

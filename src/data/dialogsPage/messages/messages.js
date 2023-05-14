@@ -1,5 +1,3 @@
-let messages = [
-
-]
+const messages = [];
 
 export default messages;

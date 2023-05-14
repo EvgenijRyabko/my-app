@@ -1,47 +1,47 @@
-import dialogs from "./dialogs/dialogs";
-import messages from "./messages/messages";
+import dialogs from './dialogs/dialogs';
+import messages from './messages/messages';
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
-let initialState = {
-    dialogs: dialogs,
-    messages: messages,
-    newMessageBody: ""
+const initialState = {
+  dialogs,
+  messages,
+  newMessageBody: '',
 };
 
-const dialogsPageReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:{
-            return {
-                ...state,
-                newMessageBody: action.body
-            };
-        }
-        case SEND_MESSAGE:{
-            let message = state.newMessageBody;
-
-            let stateCopy = {
-                ...state,
-                dialogs: [...state.dialogs],
-                newMessageBody: ''
-            };
-            
-            let item = stateCopy.dialogs.find(el => {return el.id === "1"});
-            item.messages.push(message);
-            
-            return stateCopy;
-        }
-        default:
-            return state;
+const dialogsPageReducer = (state = initialState, action = null) => {
+  switch (action.type) {
+    case UPDATE_NEW_MESSAGE_BODY: {
+      return {
+        ...state,
+        newMessageBody: action.body,
+      };
     }
-}
+    case SEND_MESSAGE: {
+      const message = state.newMessageBody;
 
-export const sendMessageCreactor = () => ({type: SEND_MESSAGE});
+      const stateCopy = {
+        ...state,
+        dialogs: [...state.dialogs],
+        newMessageBody: '',
+      };
 
-export const updateNewMessageBodyCreator = text => ({
+      const item = stateCopy.dialogs.find((el) => el.id === '1');
+      item.messages.push(message);
+
+      return stateCopy;
+    }
+    default:
+      return state;
+  }
+};
+
+export const sendMessageCreactor = () => ({ type: SEND_MESSAGE });
+
+export const updateNewMessageBodyCreator = (text) => ({
   type: UPDATE_NEW_MESSAGE_BODY,
-  body: text
+  body: text,
 });
 
 export default dialogsPageReducer;

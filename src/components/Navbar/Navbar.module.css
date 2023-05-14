@@ -1,33 +1,33 @@
 .nav {
-    grid-area: n;
-    padding: 20px 30px;
-    background: #607d8b;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 0 5px 1px #607d8b;
-    border-radius: 5px;
+	grid-area: n;
+	padding: 20px 30px;
+	background: #607d8b;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 0 0 5px 1px #607d8b;
+	border-radius: 5px;
 }
 
 .nav ul {
-    padding: 0;
-    list-style: none;
+	padding: 0;
+	list-style: none;
 }
 
 .nav ul a:before {
-    margin-right: 14px;
+	margin-right: 14px;
 }
 
 .nav ul a {
-    text-decoration: none;
-    outline: none;
-    display: block;
-    padding: 6px 0; 
-    letter-spacing: 1px;
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: white;
-    transition: .3s linear;
+	text-decoration: none;
+	outline: none;
+	display: block;
+	padding: 6px 0;
+	letter-spacing: 1px;
+	font-size: 1.3rem;
+	font-weight: 300;
+	color: white;
+	transition: 0.3s linear;
 }
 
 .nav ul a:hover {
-    color: #b99d61;
+	color: #b99d61;
 }

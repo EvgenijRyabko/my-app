@@ -1,42 +1,45 @@
 import React from 'react';
-import users from '../../data/users/users.json';
+// import users from '../../data/users/users.json';
 
-const Users = (props) => {
-    if (props.users.length === 0){
-        props.setUsers(users);
-    }
+function Users({ users, follow = (f) => f, unfollow = (f) => f, setUsers = (f) => f }) {
+  if (users.length === 0) {
+    setUsers(users);
+  }
 
-    
-    return(
-        <div>
-            {
-                props.users.map(user => <div key={user.id}>
-                    <span>
-                        <div>
-                            <img alt='none' src={user.profileImage}/>
-                        </div>
-                        <div>
-                            {
-                                user.followed
-                                ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
-                                : <button onClick={() => props.follow(user.id)}>Follow</button>
-                            }
-                        </div>
-                    </span>
-                    <span>
-                        <span>
-                            <div>{user.fullName}</div>
-                            <div>{user.status}</div>
-                        </span>
-                        <span>
-                            <div>{user.location.country}</div>
-                            <div>{user.location.city}</div>
-                        </span>
-                    </span>
-                </div>)
-            }
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id}>
+          <span>
+            <div>
+              <img alt="none" src={user.profileImage} />
+            </div>
+            <div>
+              {user.followed ? (
+                <button type="button" onClick={() => unfollow(user.id)}>
+                  Unfollow
+                </button>
+              ) : (
+                <button type="button" onClick={() => follow(user.id)}>
+                  Follow
+                </button>
+              )}
+            </div>
+          </span>
+          <span>
+            <span>
+              <div>{user.fullName}</div>
+              <div>{user.status}</div>
+            </span>
+            <span>
+              <div>{user.location.country}</div>
+              <div>{user.location.city}</div>
+            </span>
+          </span>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
 
 export default Users;

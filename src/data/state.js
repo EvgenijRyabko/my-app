@@ -1,11 +1,11 @@
-import dialogsPage from "./dialogsPage/dialogsPage";
-import profilePage from "./profilePage/profilePage";
-import sidebar from "./sidebar/sidebar";
-import dialogsPageReducer from "./dialogsPage/dialogsPage-reducer";
-import profilePageReducer from "./profilePage/profilePage-reducer";
-import sidebarReducer from "./sidebar/sidebar-reducer";
+import dialogsPage from './dialogsPage/dialogsPage';
+import profilePage from './profilePage/profilePage';
+import sidebar from './sidebar/sidebar';
+import dialogsPageReducer from './dialogsPage/dialogsPage-reducer';
+import profilePageReducer from './profilePage/profilePage-reducer';
+import sidebarReducer from './sidebar/sidebar-reducer';
 
-let store = {
+const store = {
   _state: {
     profilePage,
     dialogsPage,
@@ -16,14 +16,14 @@ let store = {
   },
   _callSubscriber() {},
   addPost() {
-    let newPost = {
+    const newPost = {
       id: 5,
       message: this._state.profilePage.newPostText,
       likesCount: 0,
     };
 
     this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = "";
+    this._state.profilePage.newPostText = '';
     this._callSubscriber(this._state);
   },
   updateNewPostText(newText) {
@@ -40,7 +40,7 @@ let store = {
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
     this._callSubscriber(this._state);
-  }
+  },
 };
 
 export default store;

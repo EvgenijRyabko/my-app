@@ -1,12 +1,9 @@
-import navigation from "./navigation/navigation";
+import navigation from './navigation/navigation';
 
-let initialState = {
-    navigation: navigation
-}
+const initialState = {
+  navigation,
+};
 
-const sidebarReducer = (state = initialState, action) => {
-
-    return state;
-}
+const sidebarReducer = (state = initialState, action = null) => state;
 
 export default sidebarReducer;

@@ -1,35 +1,35 @@
-import posts from "./posts/posts";
+import posts from './posts/posts';
 
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-let initialState = {
-  posts: posts,
+const initialState = {
+  posts,
 };
 
-const profilePageReducer = (state = initialState, action) => {
+const profilePageReducer = (state = initialState, action = null) => {
   switch (action.type) {
     case ADD_POST: {
-      let newPost = {
+      const newPost = {
         id: 5,
         message: state.newPostText,
         likesCount: 0,
       };
 
-      return { 
+      return {
         ...state,
-        posts: [...state.posts, newPost ],
-        newPostText: ''
-     };
+        posts: [...state.posts, newPost],
+        newPostText: '',
+      };
     }
     case UPDATE_NEW_POST_TEXT: {
-      return { 
+      return {
         ...state,
-        newPostText: action.newText
-     };
+        newPostText: action.newText,
+      };
     }
     default:
-        return state;;
+      return state;
   }
 };
 

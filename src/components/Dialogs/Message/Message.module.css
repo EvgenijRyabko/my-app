@@ -1,31 +1,31 @@
 .message {
-    display: grid;
-    margin: 10px 0;
+	display: grid;
+	margin: 10px 0;
 
-    grid-template-areas: "image head" "image text";
-    grid-template-columns: 2fr 10fr;
-    grid-template-rows: 40px 2fr;
+	grid-template-areas: "image head" "image text";
+	grid-template-columns: 2fr 10fr;
+	grid-template-rows: 40px 2fr;
 }
 
 .message img {
-    width: 80px;
-    border-radius: 50%;
+	width: 80px;
+	border-radius: 50%;
 
-    grid-area: image;
+	grid-area: image;
 }
 
 .message p {
-    grid-area: text;
+	grid-area: text;
 }
 
 message h3 {
-    margin: 0;
-    padding: 0;
-    grid-area: head;
+	margin: 0;
+	padding: 0;
+	grid-area: head;
 }
 
 .message.guest {
-    grid-template-areas: "head image" "text image";
-    grid-template-columns: 10fr 2fr;
-    justify-items: end;
+	grid-template-areas: "head image" "text image";
+	grid-template-columns: 10fr 2fr;
+	justify-items: end;
 }

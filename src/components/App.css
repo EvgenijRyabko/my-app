@@ -1,8 +1,8 @@
 .app-wrapper {
-    display: grid;
-
+	display: grid;
 
 	min-width: 1200px;
+	min-height: screen;
 
 	padding: 0 20px 0 20px;
 
@@ -17,8 +17,8 @@
 }
 
 .app-wrapper-content {
-    grid-area: c;
-    background-color: #607d8b;
-    box-shadow: 0 0 5px 1px #607d8b;
-    border-radius: 5px;
+	grid-area: c;
+	background-color: #607d8b;
+	box-shadow: 0 0 5px 1px #607d8b;
+	border-radius: 5px;
 }

@@ -1,10 +1,10 @@
-import dialogs from "./dialogs/dialogs";
-import messages from "./messages/messages";
+import dialogs from './dialogs/dialogs';
+import messages from './messages/messages';
 
-let dialogsPage = {
-    dialogs: dialogs,
-    messages: messages,
-    newMessageBody: ""
-}
+const dialogsPage = {
+  dialogs,
+  messages,
+  newMessageBody: '',
+};
 
 export default dialogsPage;

@@ -1,24 +1,26 @@
-import React from "react";
+import React from 'react';
 import classes from './PostCreate.module.css';
 
-const PostCreate = (props) => {
-    let newPostElement = React.createRef();
+function PostCreate({ newPostText, addPost = (f) => f, updateNewPostText = (f) => f }) {
+  const newPostElement = React.createRef();
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
+  const onPostChange = () => {
+    const text = newPostElement.current.value;
+    updateNewPostText(text);
+  };
 
-    let onAddPost = () => {
-        props.addPost();
-    }
+  const onAddPost = () => {
+    addPost();
+  };
 
-    return (
-        <div className={classes['create-area']}>
-            <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement} />
-            <button type='button' onClick={onAddPost}>Опубликовать</button>
-        </div>
-    );
+  return (
+    <div className={classes['create-area']}>
+      <textarea onChange={onPostChange} value={newPostText} ref={newPostElement} />
+      <button type="button" onClick={onAddPost}>
+        Опубликовать
+      </button>
+    </div>
+  );
 }
 
 export default PostCreate;

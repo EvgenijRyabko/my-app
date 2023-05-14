@@ -1,7 +1,7 @@
-import navigation from "./navigation/navigation";
+import navigation from './navigation/navigation';
 
-let sidebar = {
-    navigation: navigation
+const sidebar = {
+  navigation,
 };
 
 export default sidebar;

@@ -1,19 +1,14 @@
-import Navbar from "./Navbar";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import Navbar from './Navbar';
 
-let mapStateToProps = (state) => {
-    //Настраивает свойства, которые мы отправим в компоненту
-    return {
-        navigation: state.sidebar.navigation
-    }
-}
-
-let mapDispatchToProps = (dispatch) => {
-    //Настраивает коллбэки, которые мы отправим в компоненту
-    return {
-    }
-}
-
+const mapStateToProps = (state) =>
+  // Настраивает свойства, которые мы отправим в компоненту
+  ({
+    navigation: state.sidebar.navigation,
+  });
+const mapDispatchToProps = (dispatch) =>
+  // Настраивает коллбэки, которые мы отправим в компоненту
+  ({});
 const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar);
 
 export default NavbarContainer;
